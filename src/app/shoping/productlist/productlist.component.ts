@@ -8,6 +8,11 @@ import { ShopingService } from 'src/app/shoping.service';
   styleUrls: ['./productlist.component.css']
 })
 export class ProductlistComponent implements OnInit {
+  catch(value:any)
+  {
+    this.selectedProduct={}
+    this.products=this.products.filter((data:any)=>data.id!=value);
+  }
   productlist="";
   title="";
   price="";

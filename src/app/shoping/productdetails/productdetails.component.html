@@ -6,4 +6,6 @@
     <p>{{product.description}}</p>
     <p>{{product.category}}</p>
     <p>{{product.rating|json}}</p>
+    <button (click)="delete()" (keyup)="delete">delete</button>
+    <button (click)="addcart()">addcart</button>
 </div>
