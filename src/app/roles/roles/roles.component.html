@@ -1,0 +1,14 @@
+<p>roles works!</p>
+<p>Ajay</p>
+<p>Kumar</p>
+<div>Ajay kumar</div>
+<ng-container>Ajay kumar karingula</ng-container>
+<ng-template #AB>
+    <p>Ajay</p>
+    <p>Kumar</p>
+</ng-template>
+<ng-template #CD>
+    <p>Ajaykumar</p>
+    <p>ajaykaringula</p>
+</ng-template>
+<ng-container *ngTemplateOutlet="true?AB:CD"></ng-container>

@@ -1,0 +1,170 @@
+<form [formGroup]="createemployeeForm">
+    <div class="row form-group">
+        <div class="col-sm-4">
+        <label for="name"> Name: </label>
+        </div>
+        <div class="col-sm-8">
+        <input [ngClass]="createemployeeForm.get('name')?.invalid&& createemployeeForm.get('name')?.touched?'abcd':'abcde'" formControlName="name" type="text" id="name" class="form-control" placeholder="Enter name" name="name">
+        <div class ="abc" *ngIf="createemployeeForm.get('name')?.invalid&& createemployeeForm.get('name')?.touched">
+            <p *ngIf="createemployeeForm.get('name')?.errors?.['required']">enter name</p>
+            <!-- <p *ngIf="createemployeeForm.get('name')?.errors?.['minlength']">minLength 3 char's required</p>
+            <p *ngIf="createemployeeForm.get('name')?.errors?.['maxlength']">maxLength 20 char's required</p> -->
+        </div>
+        </div>
+    </div>
+    <div class="row form-group">
+        <div class="col-sm-4">
+        <label for="name"> Mobile: </label>
+        </div>
+        <div class="col-sm-8">
+        <input [ngClass]="createemployeeForm.get('mobile')?.invalid && createemployeeForm.get('mobile')?.touched?'abcd':'abcde'" formControlName="mobile" type="text" id="name" class="form-control" placeholder="Enter mobile number" name="mobile">
+        <div class ="abc" *ngIf="createemployeeForm.get('mobile')?.invalid&& createemployeeForm.get('mobile')?.touched">
+            <p *ngIf="createemployeeForm.get('mobile')?.errors?.['required']">enter mobile</p>
+            <p *ngIf="createemployeeForm.get('mobile')?.errors?.['minlength']">minLength 3 char's required</p>
+            <p *ngIf="createemployeeForm.get('mobile')?.errors?.['maxlength']">maxLength 20 char's required</p>
+        </div>
+        </div>
+    </div>
+    <div class="row form-group">
+        <div class="col-sm-4">
+        <label for="name"> Email: </label>
+        </div>
+        <div class="col-sm-8">
+        <input type="text" id="name" class="form-control" placeholder="Enter email" name="email">
+        </div>
+    </div>
+    <div class="row form-group">
+        <div class="col-sm-4">
+        <label for="name"> dob: </label>
+        </div>
+        <div class="col-sm-8">
+        <input type="date" id="name" class="form-control" name="dob">
+        </div>
+    </div>
+    <div formGroupName="address">
+    <div class="row form-group">
+        <div class="col-sm-4">
+        <label for="name"> Address: </label>
+        </div>
+    </div>   
+    <div class="row form-group">
+        <div class="col-sm-4">
+        <label for="name"> AddrressLine: </label>
+        </div>
+        <div class="col-sm-8">
+        <input type="text" id="name" class="form-control" placeholder="Enter address" name="addressline">
+        </div>
+    </div>
+    <div class="row form-group">
+        <div class="col-sm-4">
+        <label for="name"> addressLine: </label>
+        </div>
+        <div class="col-sm-8">
+        <input type="text" id="name" class="form-control" placeholder="Enter addressLine" name="addressline">
+        </div>
+    </div>
+    <div class="row form-group">
+        <div class="col-sm-4">
+        <label for="name"> City: </label>
+        </div>
+        <div class="col-sm-8">
+        <input type="text" id="name" class="form-control" placeholder="Enter city" name="city">
+        </div>
+    </div>
+    <div class="row form-group">
+        <div class="col-sm-4">
+        <label for="name"> State: </label>
+        </div>
+        <div class="col-sm-8">
+        <input type="text" id="name" class="form-control" placeholder="Enter state" name="state">
+        </div>
+    </div>
+    <div class="row form-group">
+        <div class="col-sm-4">
+        <label for="name"> Pincode: </label>
+        </div>
+        <div class="col-sm-8">
+        <input type="text" id="name" class="form-control" placeholder="Enter pincode" name="pincode">
+        </div>
+    </div>
+    </div>
+    <div class="row form-group">
+         <div class="col-sm-4">
+         <label for="name"> education: </label>
+    </div>
+    </div>
+    <div class="row" formArrayname="education">
+        <div *ngFor="let item of educationFormArray.controls; let i=index">
+            <div formGroupName="{{i}}">
+
+                    <div class="col-sm-8">
+                        <div class="row form-group">
+                            <div class="col-sm-4">
+                            <label for="name"> qualification: </label>
+                            </div>
+                            <div class="col-sm-8">
+                            <input type="text" id="name"  placeholder="Enter item name" name="qualification">
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                                <div class="col-sm-4">
+                                <label for="name"> year: </label>
+                                </div>
+                                <div class="col-sm-8">
+                                <input type="text" id="name"  placeholder="Enter quantity" name="year">
+                                </div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col-sm-4">
+                            <label for="name"> percentage: </label>
+                            </div>
+                            <div class="col-sm-8">
+                            <input type="text" id="name"  placeholder="Enter quantity" name="percentage">
+                            </div>
+                    </div>
+                        <button (click)="delete(i)">delete</button>
+                    </div>
+                   
+            </div>
+        </div>
+    </div>
+    <button (click)="getdetails()">getdetails</button> 
+    <div class="row form-group">
+        <div class="col-sm-4">
+        <label for="name"> Role: </label>
+        </div>
+            <div class="row form-group">
+                <div class="col-sm-4">
+                <input formControlName="role" type="radio" id="name" name="role" value="frontend engineer">
+                <label for="name"> Frontend Engineer </label>
+                <input formControlName="role" type="radio" id="name" name="role" value="backend engineer">
+                <label for="name"> Backend Engineer </label>
+                </div>
+            </div>
+    </div>
+        <div *ngIf="createemployeeForm.get('role')?.value=='frontend engineer'">
+            <div class="row form-group">
+                <div class="col-sm-4">
+                <ul>
+                   <label for="name"><li> 3years of experience for HTML, CSS, Javascript, Angular </li></label>
+                </ul>
+                </div>
+                <!-- <div class="col-sm-8">
+                <input formControlName="frontend engineer" type="text" id="name" name="frontend engineer">
+                </div> -->
+            </div>
+        </div>
+        <div *ngIf="createemployeeForm.get('role')?.value=='backend engineer'">
+            <div class="row form-group">
+                <div class="col-sm-4">
+                <ul>
+                    <label for="name"><li> 3years of experience for NodeJs, ExpressJs, MongoDB </li></label>
+                </ul>
+                </div>
+                <!-- <div class="col-sm-8">
+                <input formControlName="backend engineer" type="text" id="name" name="backend engineer">
+                </div> -->
+            </div> 
+        </div>       
+    <button (click)="submit()">Sumbit</button>   
+</form>

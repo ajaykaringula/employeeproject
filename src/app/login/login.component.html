@@ -1,0 +1,39 @@
+<div class="parent">
+    <div class="left">
+        <img src="1234.png">
+    </div>
+    <div class="right">
+       
+        <form [formGroup]="loginform" class="a">
+            <label class="abcd"><h2> ACCOUNT LOGIN </h2></label>
+            <div class="row form-group">
+                <input type="text" id="name" class="form-control" formControlName="email" placeholder="Enter name" name="email">
+            </div>
+            <div class="row form-group">
+                <input type="text" id="name" class="form-control" formControlName="password" placeholder="Enter password" name="password">
+            </div>
+                <!-- <div class="row">
+                    <div class="row form-group">
+                        <div class="col-sm-4">
+                        </div>
+                        <br>
+                        <div class="col-sm-8">
+                        <input formControlName="name" type="text" id="name" class="form-control" placeholder="Enter name" name="name">
+                        <input formControlName="password" type="text" id="name" class="form-control" placeholder="password" name="password">
+                        </div>
+                        <br>
+                        <div class="col-sm-8">
+                        <button class="b1" routerLink="/personalinfo" (click)="signin()">SIGN IN</button>
+                        <p>Forgot <b>USERNAME / PASSWORD?</b></p>
+                        <p class="p1">SIGN UP</p>
+                        </div>
+                    </div>
+                </div>
+            -->
+            <button class="b1" (click)="signin()">SIGN IN</button>
+            <br>
+            <p>Forgot <b>USERNAME / PASSWORD?</b></p>
+            <p class="p1">SIGN UP</p>
+        </form>
+    </div>
+</div>

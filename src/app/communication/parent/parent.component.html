@@ -1,0 +1,5 @@
+<div class="abc">
+    <input [(ngModel)]="pv" type="text">
+    <p>{{cv}}</p>
+    <app-child [a]="pv" (e)="catch($event)"></app-child>
+</div>

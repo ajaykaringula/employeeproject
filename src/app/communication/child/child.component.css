@@ -1,0 +1,10 @@
+.abcd{
+    height: auto;
+    min-height: 70vh;
+    width: 80%;
+    background-color: rgb(219, 16, 77);
+    margin-left: 100px;
+    margin-top: 100px;
+    text-align: center;
+    padding-top: 10px;
+}
